@@ -1,0 +1,13 @@
+<div class="main posts-index">
+  <div class="container">
+    <h1 class="horses-heading">競走馬一覧</h1>
+    <% @horses.each do |horse| %>
+      <div class="horses-index-item">
+        <div class="horse-name">
+          <%= link_to(horse.name, "/horses/#{horse.id}") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+

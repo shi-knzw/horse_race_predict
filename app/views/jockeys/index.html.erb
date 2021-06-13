@@ -1,0 +1,12 @@
+<div class="main posts-index">
+  <div class="container">
+    <h1 class="jockeys-heading">競走馬一覧</h1>
+    <% @jockeys.each do |jockey| %>
+      <div class="jockeys-index-item">
+        <div class="jockey-name">
+          <%= link_to(jockey.name, "/jockeys/#{jockey.id}") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
