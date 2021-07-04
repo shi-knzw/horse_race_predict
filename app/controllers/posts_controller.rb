@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by(id:params[:id])
-    @user = @post.user
+    @user = @post.user  #postのdb内のuserカラム？
     @likes_count = Like.where(post_id: @post.id).count
   end
 
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     )
 
     if @post.save
-      flash[:error] = "ツイートを投稿しました"
+      flash[:posting] = "ツイートを投稿しました"
       redirect_to("/posts/index")
     else
       render("posts/new")
