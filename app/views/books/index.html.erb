@@ -1,4 +1,24 @@
 <h1>書籍ランキング上位５冊</h1>
-<p>
-<%= @filteredItems %>
-</p>
+<%# 書籍一冊ごとに改行する。 %>
+<% @books.each do |book| %>
+  <%# 本の価格だけを出力する %>
+  <p><%= book[:name] %></p>
+  <%# 本のタイトルだけを出力する %>
+  <p><%= book[:price] %></p>
+<% end %>
+
+<%# <%= @filteredItems %> 
+
+<%= form_tag("/books/create") do %>
+    <input style="background-color:green;" type="submit" value="書籍情報を保存する">
+<% end %>
+
+<%# 書籍のデータをDBに保存する %>
+<%# booksテーブルに書籍の情報を保存する %>
+<%# booksテーブルを作成する %>
+<%# booksテーブルにname、price,availabilityのカラムを追加する %>
+
+<%# 保存するメソッドを実行するボタンを作成する %>
+<%# ボタンからコントローラーの保存するメソッドを動かすルーティングを設定する %>
+<%# 書籍をbookテーブルに保存するメソッドを作成する %>
+ 

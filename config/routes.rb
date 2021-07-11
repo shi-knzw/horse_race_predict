@@ -27,8 +27,8 @@ Rails.application.routes.draw do
   get "about" => "home#about"
 
   get "books/index" => "books#index"
-  
-  #get "book/index" => "book#index"
+  post "books/create" => "books#create"
+  get "books/show" => "books#show"
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
