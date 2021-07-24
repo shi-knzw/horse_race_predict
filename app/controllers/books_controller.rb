@@ -9,22 +9,27 @@ class BooksController < ApplicationController
   def update
     @filteredItems.each do |filteredItem|
       filteredItem.fetch_values(:name, :price, :image_url)
-      @book = Book.new()
-      @book.name = filteredItem[:name]
-      @book.price = filteredItem[:price]
-      @book.image_url = filteredItem[:image_url]
-      puts filteredItem[:image_url]
       
       #書籍の値段が変更されたとき、データも上書きされるようにしたい
       #Bookテーブルの中から、書名が一致するデータを取り出す。
-      existing_book = Book.find_by(params[:name])
+      existing_book = Book.find_by(name: filteredItem[:name])
+      puts "--------------------------------------"
+      puts existing_book
+      puts "--------------------------------------"
+      puts filteredItem
       #取り出したデータのpriceが同じなら、何もしない
       #取り出したデータのpriceが異なるなら、そのデータのpriceに値を代入してセーブする。
-      if (@book.price != existing_book.price || @book.image_url == existing_book.image_url) then
-        existing_book.price = @book.price
-        existing_book.image_url = @book.image_url
-        existing_book.save        
-      elsif @book.price == existing_book.price then
+      if (existing_book == nil) then
+        book = Book.new
+        book.name = filteredItem[:name]
+        book.price = filteredItem[:price]
+        book.image_url = filteredItem[:image_url]
+        book.save
+      elsif (filteredItem[:price] != existing_book.price || filteredItem[:image_url] != existing_book.image_url) then
+        existing_book.price = filteredItem[:price]
+        existing_book.image_url = filteredItem[:image_url]
+        existing_book.save
+      elsif filteredItem[:price] == existing_book.price then
         #何もしない
       end
       #Bookテーブルの中から書名が一致するデータがなければ、bookインスタンスを生成する
@@ -51,13 +56,15 @@ class BooksController < ApplicationController
     @items.each_with_index do |element, index|
       if (index < 5)
         @filteredItems.push(
-            {
-              "name": element["Item"]["itemName"],
-              "price": element["Item"]["itemPrice"],
-              "availability": element["Item"]["availability"],
-              "image_url": element["Item"]["mediumImageUrls"][0]["imageUrl"]
-            }
-          )
+          {
+            "name": element["Item"]["itemName"],
+            "price": element["Item"]["itemPrice"],
+            "availability": element["Item"]["availability"],
+            "image_url": element["Item"]["mediumImageUrls"][0]["imageUrl"]
+          }
+        )
+        # puts "-------------------------------------------------"
+        # puts element["Item"]["mediumImageUrls"][0]["imageUrl"]
       end
     end
   end  

@@ -51714,3 +51714,509 @@ Processing by BooksController#index as HTML
 Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/books/create" for ::1 at 2021-07-24 21:24:23 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#create as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering books/create.html.erb within layouts/application
+  Rendered books/create.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 73ms (Views: 64.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/books/update" for ::1 at 2021-07-24 21:24:25 +0900
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0Hv9+n1iMlVnGHhdbOyVQbvS/xQbTbO/bBVoeYln8PSRf72LzBbBcI4c4VPGzi6aPdX8k5utYaFXK6TW4tF6GA=="}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 2266], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/6183/9784774196183.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:24:26.061542"], ["id", 39]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 2640], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/rakutenkobo-ebooks/cabinet/1212/2000002281212.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:24:26.068615"], ["id", 39]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 3960], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8836/9784774188836.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:24:26.073209"], ["id", 39]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 2530], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/mifsoft/cabinet/b/7/138/9784777517138.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:24:26.077010"], ["id", 39]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 3828], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/mifsoft/cabinet/b/2/227/9784839962227.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:24:26.080410"], ["id", 39]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/index
+Completed 302 Found in 263ms (ActiveRecord: 11.9ms)
+
+
+Started GET "/books/index" for ::1 at 2021-07-24 21:24:26 +0900
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/create" for ::1 at 2021-07-24 21:25:35 +0900
+Started GET "/books/create" for ::1 at 2021-07-24 21:25:45 +0900
+Processing by BooksController#create as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering books/create.html.erb within layouts/application
+  Rendered books/create.html.erb within layouts/application (0.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 22ms (Views: 12.7ms | ActiveRecord: 0.9ms)
+
+
+Processing by BooksController#create as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering books/create.html.erb within layouts/application
+  Rendered books/create.html.erb within layouts/application (0.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 11ms (Views: 6.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/books/update" for ::1 at 2021-07-24 21:25:49 +0900
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"flHY+zPYs8nV8YkZVd21mmdTe63RssdHnWt7bpSjW+w/VZiKgqxA7Dz1EBf//w5B4VR4KlFSFVmmVbfB/xXRAA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 2266], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/6183/9784774196183.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:25:49.398228"], ["id", 39]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 2640], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/rakutenkobo-ebooks/cabinet/1212/2000002281212.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:25:49.406930"], ["id", 39]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 3960], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8836/9784774188836.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:25:49.410639"], ["id", 39]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 3080], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/guruguru2/cabinet/b/4/729/9784798114729.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:25:49.414000"], ["id", 39]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 3828], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/mifsoft/cabinet/b/2/227/9784839962227.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:25:49.417410"], ["id", 39]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/index
+Completed 302 Found in 212ms (ActiveRecord: 9.6ms)
+
+
+Started GET "/books/index" for ::1 at 2021-07-24 21:25:49 +0900
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/books/update" for ::1 at 2021-07-24 21:27:19 +0900
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"flHY+zPYs8nV8YkZVd21mmdTe63RssdHnWt7bpSjW+w/VZiKgqxA7Dz1EBf//w5B4VR4KlFSFVmmVbfB/xXRAA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 209ms (ActiveRecord: 0.6ms)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/controllers/books_controller.rb:58:in `[]'
+app/controllers/books_controller.rb:58:in `block in fetch_rakuten_books'
+app/controllers/books_controller.rb:51:in `each'
+app/controllers/books_controller.rb:51:in `each_with_index'
+app/controllers/books_controller.rb:51:in `fetch_rakuten_books'
+Started PUT "/__web_console/repl_sessions/d1bc3bb573de421620af1a6379ce2771" for ::1 at 2021-07-24 21:27:44 +0900
+Started PUT "/__web_console/repl_sessions/d1bc3bb573de421620af1a6379ce2771" for ::1 at 2021-07-24 21:27:48 +0900
+Started PUT "/__web_console/repl_sessions/d1bc3bb573de421620af1a6379ce2771" for ::1 at 2021-07-24 21:29:49 +0900
+Started POST "/books/update" for ::1 at 2021-07-24 21:31:04 +0900
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"flHY+zPYs8nV8YkZVd21mmdTe63RssdHnWt7bpSjW+w/VZiKgqxA7Dz1EBf//w5B4VR4KlFSFVmmVbfB/xXRAA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 2266], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/6183/9784774196183.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:31:04.304135"], ["id", 39]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 2640], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/rakutenkobo-ebooks/cabinet/1212/2000002281212.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:31:04.310754"], ["id", 39]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 3960], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8836/9784774188836.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:31:04.314883"], ["id", 39]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 328], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/comicset/cabinet/no_image.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:31:04.318821"], ["id", 39]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/index
+Completed 302 Found in 221ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/books/index" for ::1 at 2021-07-24 21:31:04 +0900
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/books/update" for ::1 at 2021-07-24 21:37:01 +0900
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"flHY+zPYs8nV8YkZVd21mmdTe63RssdHnWt7bpSjW+w/VZiKgqxA7Dz1EBf//w5B4VR4KlFSFVmmVbfB/xXRAA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 2266], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/6183/9784774196183.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:37:01.420248"], ["id", 39]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 2640], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/rakutenkobo-ebooks/cabinet/1212/2000002281212.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:37:01.427684"], ["id", 39]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 3960], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8836/9784774188836.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:37:01.432509"], ["id", 39]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 328], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/comicset/cabinet/no_image.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:37:01.436585"], ["id", 39]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/index
+Completed 302 Found in 243ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/books/index" for ::1 at 2021-07-24 21:37:01 +0900
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/books/update" for ::1 at 2021-07-24 21:40:58 +0900
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"flHY+zPYs8nV8YkZVd21mmdTe63RssdHnWt7bpSjW+w/VZiKgqxA7Dz1EBf//w5B4VR4KlFSFVmmVbfB/xXRAA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 2266], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/6183/9784774196183.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:40:58.583181"], ["id", 39]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 2640], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/rakutenkobo-ebooks/cabinet/1212/2000002281212.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:40:58.588830"], ["id", 39]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 3960], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8836/9784774188836.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:40:58.593743"], ["id", 39]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 3080], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/booxstore/cabinet/00196/bk4798114723.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:40:58.598388"], ["id", 39]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 328], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/mottainaihonpo/cabinet/no_image.jpg?_ex=128x128"], ["updated_at", "2021-07-24 12:40:58.601591"], ["id", 39]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/index
+Completed 302 Found in 255ms (ActiveRecord: 9.2ms)
+
+
+Started GET "/books/index" for ::1 at 2021-07-24 21:40:58 +0900
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/books/update" for ::1 at 2021-07-24 21:48:00 +0900
+  
+SyntaxError (/Users/kanazawashin/horse_race_predict/app/controllers/books_controller.rb:24: syntax error, unexpected '='
+      if (@book.price !== existing_book.price || @book...
+                        ^
+/Users/kanazawashin/horse_race_predict/app/controllers/books_controller.rb:24: syntax error, unexpected '='
+...ok.price || @book.image_url !== existing_book.image_url) then
+...                              ^
+):
+  
+app/controllers/books_controller.rb:24: syntax error, unexpected '='
+app/controllers/books_controller.rb:24: syntax error, unexpected '='
+Started PUT "/__web_console/repl_sessions/cf1173575523330f41c6154546b95952" for ::1 at 2021-07-24 21:53:06 +0900
+Started PUT "/__web_console/repl_sessions/cf1173575523330f41c6154546b95952" for ::1 at 2021-07-24 21:53:07 +0900
+Started PUT "/__web_console/repl_sessions/cf1173575523330f41c6154546b95952" for ::1 at 2021-07-24 21:53:22 +0900
+Started PUT "/__web_console/repl_sessions/cf1173575523330f41c6154546b95952" for ::1 at 2021-07-24 21:53:24 +0900
+Started PUT "/__web_console/repl_sessions/cf1173575523330f41c6154546b95952" for ::1 at 2021-07-24 21:53:36 +0900
+Started PUT "/__web_console/repl_sessions/cf1173575523330f41c6154546b95952" for ::1 at 2021-07-24 21:53:37 +0900
+Started POST "/books/update" for ::1 at 2021-07-24 22:00:03 +0900
+  
+SyntaxError (/Users/kanazawashin/horse_race_predict/app/controllers/books_controller.rb:24: syntax error, unexpected '='
+      if (@book.price !== existing_book.price || @book...
+                        ^
+/Users/kanazawashin/horse_race_predict/app/controllers/books_controller.rb:24: syntax error, unexpected '='
+...ok.price || @book.image_url !== existing_book.image_url) then
+...                              ^
+):
+  
+app/controllers/books_controller.rb:24: syntax error, unexpected '='
+app/controllers/books_controller.rb:24: syntax error, unexpected '='
+Started POST "/books/update" for ::1 at 2021-07-24 22:04:08 +0900
+  
+SyntaxError (/Users/kanazawashin/horse_race_predict/app/controllers/books_controller.rb:18: syntax error, unexpected '='
+...   if (filteredItem[:price] !== existing_book.price || filte...
+...                              ^
+/Users/kanazawashin/horse_race_predict/app/controllers/books_controller.rb:18: syntax error, unexpected '='
+...|| filteredItem[:image_url] !== existing_book.image_url) then
+...                              ^
+):
+  
+app/controllers/books_controller.rb:18: syntax error, unexpected '='
+app/controllers/books_controller.rb:18: syntax error, unexpected '='
+Started POST "/books/update" for ::1 at 2021-07-24 22:05:50 +0900
+  
+SyntaxError (/Users/kanazawashin/horse_race_predict/app/controllers/books_controller.rb:22: syntax error, unexpected '='
+...   if (filteredItem[:price] !== existing_book.price || filte...
+...                              ^
+/Users/kanazawashin/horse_race_predict/app/controllers/books_controller.rb:22: syntax error, unexpected '='
+...|| filteredItem[:image_url] !== existing_book.image_url) then
+...                              ^
+):
+  
+app/controllers/books_controller.rb:22: syntax error, unexpected '='
+app/controllers/books_controller.rb:22: syntax error, unexpected '='
+Started POST "/books/update" for ::1 at 2021-07-24 22:06:52 +0900
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"flHY+zPYs8nV8YkZVd21mmdTe63RssdHnWt7bpSjW+w/VZiKgqxA7Dz1EBf//w5B4VR4KlFSFVmmVbfB/xXRAA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE (Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]) LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 232ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "（たった1日で基本が身に付く！）": syntax error: SELECT  "books".* FROM "books" WHERE (Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]) LIMIT ?):
+  
+app/controllers/books_controller.rb:15:in `block in update'
+app/controllers/books_controller.rb:10:in `each'
+app/controllers/books_controller.rb:10:in `update'
+Started POST "/books/update" for ::1 at 2021-07-24 22:08:32 +0900
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"flHY+zPYs8nV8YkZVd21mmdTe63RssdHnWt7bpSjW+w/VZiKgqxA7Dz1EBf//w5B4VR4KlFSFVmmVbfB/xXRAA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["id", 39], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "books" SET "price" = ?, "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["price", 2266], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/6183/9784774196183.jpg?_ex=128x128"], ["updated_at", "2021-07-24 13:08:33.158113"], ["id", 39]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "実践Ruby on Rails 4 機能拡張編【電子書籍】[ 黒田 努 ]"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "実践Ruby on Rails 4 機能拡張編【電子書籍】[ 黒田 努 ]"], ["id", 40], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "books" SET "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/rakutenkobo-ebooks/cabinet/1212/2000002281212.jpg?_ex=128x128"], ["updated_at", "2021-07-24 13:08:33.162519"], ["id", 40]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "Ruby　on　Rails　5アプリケーションプログラミング [ 山田祥寛 ]"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "Ruby　on　Rails　5アプリケーションプログラミング [ 山田祥寛 ]"], ["id", 41], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "books" SET "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8836/9784774188836.jpg?_ex=128x128"], ["updated_at", "2021-07-24 13:08:33.167080"], ["id", 41]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "独習Ruby on Rails"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "独習Ruby on Rails"], ["id", 44], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "books" SET "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/guruguru2/cabinet/b/0/689/9784798160689.jpg?_ex=128x128"], ["updated_at", "2021-07-24 13:08:33.170760"], ["id", 44]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "【中古】 Ruby　on　Rails入門 優しいRailsの育て方 / 西 和則 / 秀和システム [単行本]【メール便送料無料】【あす楽対応】"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? AND ("books"."id" != ?) LIMIT ?[0m  [["name", "【中古】 Ruby　on　Rails入門 優しいRailsの育て方 / 西 和則 / 秀和システム [単行本]【メール便送料無料】【あす楽対応】"], ["id", 43], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "books" SET "image_url" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/comicset/cabinet/no_image.jpg?_ex=128x128"], ["updated_at", "2021-07-24 13:08:33.174245"], ["id", 43]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/index
+Completed 302 Found in 193ms (ActiveRecord: 9.2ms)
+
+
+Started GET "/books/index" for ::1 at 2021-07-24 22:08:33 +0900
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/books/update" for ::1 at 2021-07-24 22:09:31 +0900
+  
+SyntaxError (/Users/kanazawashin/horse_race_predict/app/controllers/books_controller.rb:22: syntax error, unexpected '='
+...   if (filteredItem[:price] !== existing_book.price || filte...
+...                              ^
+/Users/kanazawashin/horse_race_predict/app/controllers/books_controller.rb:22: syntax error, unexpected '='
+...|| filteredItem[:image_url] !== existing_book.image_url) then
+...                              ^
+):
+  
+app/controllers/books_controller.rb:22: syntax error, unexpected '='
+app/controllers/books_controller.rb:22: syntax error, unexpected '='
+Started POST "/books/update" for ::1 at 2021-07-24 22:10:14 +0900
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"flHY+zPYs8nV8YkZVd21mmdTe63RssdHnWt7bpSjW+w/VZiKgqxA7Dz1EBf//w5B4VR4KlFSFVmmVbfB/xXRAA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["LIMIT", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "実践Ruby on Rails 4 機能拡張編【電子書籍】[ 黒田 努 ]"], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "Ruby　on　Rails　5アプリケーションプログラミング [ 山田祥寛 ]"], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "独習Ruby on Rails"], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "【中古】 Ruby　on　Rails入門 優しいRailsの育て方 / 西 和則 / 秀和システム [単行本]【メール便送料無料】【あす楽対応】"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/books/index
+Completed 302 Found in 221ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/books/index" for ::1 at 2021-07-24 22:10:14 +0900
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 23ms (Views: 19.8ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "books"[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/books/index" for ::1 at 2021-07-24 22:15:31 +0900
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 28.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/create" for ::1 at 2021-07-24 22:15:37 +0900
+Processing by BooksController#create as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering books/create.html.erb within layouts/application
+  Rendered books/create.html.erb within layouts/application (1.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/books/update" for ::1 at 2021-07-24 22:15:39 +0900
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y5JdsgwlqeJ27kEVLrTwClwhU6OIMCaYR6c6/iVCzi2Klh3DvVFax5/q2BuElkvR2iZQJAjQ9IZ8mfZRTvREwQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 215ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `price' for nil:NilClass):
+  
+app/controllers/books_controller.rb:22:in `block in update'
+app/controllers/books_controller.rb:10:in `each'
+app/controllers/books_controller.rb:10:in `update'
+Started POST "/books/update" for ::1 at 2021-07-24 22:19:33 +0900
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y5JdsgwlqeJ27kEVLrTwClwhU6OIMCaYR6c6/iVCzi2Klh3DvVFax5/q2BuElkvR2iZQJAjQ9IZ8mfZRTvREwQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 204ms (ActiveRecord: 1.6ms)
+
+
+  
+NoMethodError (undefined method `price=' for nil:NilClass):
+  
+app/controllers/books_controller.rb:23:in `block in update'
+app/controllers/books_controller.rb:10:in `each'
+app/controllers/books_controller.rb:10:in `update'
+Started POST "/books/update" for ::1 at 2021-07-24 22:20:56 +0900
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y5JdsgwlqeJ27kEVLrTwClwhU6OIMCaYR6c6/iVCzi2Klh3DvVFax5/q2BuElkvR2iZQJAjQ9IZ8mfZRTvREwQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 198ms (ActiveRecord: 1.5ms)
+
+
+  
+NoMethodError (undefined method `price=' for nil:NilClass):
+  
+app/controllers/books_controller.rb:23:in `block in update'
+app/controllers/books_controller.rb:10:in `each'
+app/controllers/books_controller.rb:10:in `update'
+Started POST "/books/update" for ::1 at 2021-07-24 22:22:28 +0900
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y5JdsgwlqeJ27kEVLrTwClwhU6OIMCaYR6c6/iVCzi2Klh3DvVFax5/q2BuElkvR2iZQJAjQ9IZ8mfZRTvREwQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "updated_at", "name", "price", "image_url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2021-07-24 13:22:28.298334"], ["updated_at", "2021-07-24 13:22:28.298334"], ["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["price", 2266], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/6183/9784774196183.jpg?_ex=128x128"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "実践Ruby on Rails 4 機能拡張編【電子書籍】[ 黒田 努 ]"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "実践Ruby on Rails 4 機能拡張編【電子書籍】[ 黒田 努 ]"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "updated_at", "name", "price", "image_url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2021-07-24 13:22:28.303591"], ["updated_at", "2021-07-24 13:22:28.303591"], ["name", "実践Ruby on Rails 4 機能拡張編【電子書籍】[ 黒田 努 ]"], ["price", 2640], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/rakutenkobo-ebooks/cabinet/1212/2000002281212.jpg?_ex=128x128"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "Ruby　on　Rails　5アプリケーションプログラミング [ 山田祥寛 ]"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "Ruby　on　Rails　5アプリケーションプログラミング [ 山田祥寛 ]"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "updated_at", "name", "price", "image_url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2021-07-24 13:22:28.307246"], ["updated_at", "2021-07-24 13:22:28.307246"], ["name", "Ruby　on　Rails　5アプリケーションプログラミング [ 山田祥寛 ]"], ["price", 3960], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8836/9784774188836.jpg?_ex=128x128"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "はじめてのJRuby　on　Rails　「Java」＋「Ruby」でWebアプリケーション開発／清水美樹／IO編集部【1000円以上送料無料】"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "はじめてのJRuby　on　Rails　「Java」＋「Ruby」でWebアプリケーション開発／清水美樹／IO編集部【1000円以上送料無料】"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "updated_at", "name", "price", "image_url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2021-07-24 13:22:28.310243"], ["updated_at", "2021-07-24 13:22:28.310243"], ["name", "はじめてのJRuby　on　Rails　「Java」＋「Ruby」でWebアプリケーション開発／清水美樹／IO編集部【1000円以上送料無料】"], ["price", 2530], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/bookfan/cabinet/00340/bk4777517136.jpg?_ex=128x128"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "現場で使えるRuby on Rails 5速習実践ガイド"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "現場で使えるRuby on Rails 5速習実践ガイド"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "updated_at", "name", "price", "image_url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2021-07-24 13:22:28.312618"], ["updated_at", "2021-07-24 13:22:28.312618"], ["name", "現場で使えるRuby on Rails 5速習実践ガイド"], ["price", 3828], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/mifsoft/cabinet/b/2/227/9784839962227.jpg?_ex=128x128"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/index
+Completed 302 Found in 220ms (ActiveRecord: 9.2ms)
+
+
+Started GET "/books/index" for ::1 at 2021-07-24 22:22:28 +0900
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.2ms)
+
+
