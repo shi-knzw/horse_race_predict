@@ -1,3 +1,15 @@
 // Place all the styles related to the books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.test {
+    position: relative;
+    top: 100px;
+    left: 20px;
+}
+
+.books_info{
+    text-align: left;
+    color: white;
+    padding-top: 100px;
+    margin-left: 100px;
+}

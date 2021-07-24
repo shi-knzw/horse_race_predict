@@ -1,27 +1,43 @@
 class BooksController < ApplicationController
   
-  before_action :fetch_rakuten_books, only: [:create]
+  before_action :fetch_rakuten_books, only: [:update]
 
   def index
-    @books = Book.all
+    @books = Book.all[0..4]
   end
   
-  def create
+  def update
     @filteredItems.each do |filteredItem|
-      filteredItem.fetch_values(:name, :price)
+      filteredItem.fetch_values(:name, :price, :image_url)
       @book = Book.new()
       @book.name = filteredItem[:name]
       @book.price = filteredItem[:price]
-      @book.save
+      @book.image_url = filteredItem[:image_url]
+      puts filteredItem[:image_url]
       
       #書籍の値段が変更されたとき、データも上書きされるようにしたい
       #Bookテーブルの中から、書名が一致するデータを取り出す。
-      #取り出したデータのpriceが同じなら、何もしない 
-      #取り出したデータのpriceが異なるなら、そのデータのpriceに値を代入してセーブする。 i
+      existing_book = Book.find_by(params[:name])
+      #取り出したデータのpriceが同じなら、何もしない
+      #取り出したデータのpriceが異なるなら、そのデータのpriceに値を代入してセーブする。
+      if (@book.price != existing_book.price || @book.image_url == existing_book.image_url) then
+        existing_book.price = @book.price
+        existing_book.image_url = @book.image_url
+        existing_book.save        
+      elsif @book.price == existing_book.price then
+        #何もしない
+      end
       #Bookテーブルの中から書名が一致するデータがなければ、bookインスタンスを生成する
       #bookインスタンスの書名と値段を保存する
     end
+
+    redirect_to("/books/index")
+    
   end
+
+  def create
+  end
+
 
   def fetch_rakuten_books
     require "net/http"
@@ -38,7 +54,8 @@ class BooksController < ApplicationController
             {
               "name": element["Item"]["itemName"],
               "price": element["Item"]["itemPrice"],
-              "availability": element["Item"]["availability"]
+              "availability": element["Item"]["availability"],
+              "image_url": element["Item"]["mediumImageUrls"][0]["imageUrl"]
             }
           )
       end
