@@ -52700,3 +52700,34 @@ app/controllers/books_controller.rb:10:in `update'
   [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
 Started PUT "/__web_console/repl_sessions/a237a7247709b11329798695e9722287" for ::1 at 2021-07-31 22:49:28 +0900
 Started PUT "/__web_console/repl_sessions/a237a7247709b11329798695e9722287" for ::1 at 2021-07-31 22:49:39 +0900
+Started POST "/books/update" for ::1 at 2021-07-31 23:09:52 +0900
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TJS2PK26gwXOZ5YlI3ibh+BVttU31jKvRfKNYxT+cZTR82Kq2OZh1eJ8fvsz9aqhpDo/0lgilfyJZouDE7wTOw=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["LIMIT", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "実践Ruby on Rails 4 機能拡張編【電子書籍】[ 黒田 努 ]"], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "Ruby　on　Rails　5アプリケーションプログラミング [ 山田祥寛 ]"], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "はじめてのJRuby on Rails 「Java」＋「Ruby」でWebアプリケーション開発"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "はじめてのJRuby on Rails 「Java」＋「Ruby」でWebアプリケーション開発"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "updated_at", "name", "price", "image_url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2021-07-31 14:09:53.156148"], ["updated_at", "2021-07-31 14:09:53.156148"], ["name", "はじめてのJRuby on Rails 「Java」＋「Ruby」でWebアプリケーション開発"], ["price", 2530], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/mifsoft/cabinet/b/7/138/9784777517138.jpg?_ex=128x128"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "【中古】 現場で使えるRuby　on　Rails　5　速習実践ガイド 5．2対応 ／大場寧子(著者),松本拓也(著者),櫻井達生(著者),小田井優(著者),大塚隆弘(著者) 【中古】afb"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "【中古】 現場で使えるRuby　on　Rails　5　速習実践ガイド 5．2対応 ／大場寧子(著者),松本拓也(著者),櫻井達生(著者),小田井優(著者),大塚隆弘(著者) 【中古】afb"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "updated_at", "name", "price", "image_url") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2021-07-31 14:09:53.258287"], ["updated_at", "2021-07-31 14:09:53.258287"], ["name", "【中古】 現場で使えるRuby　on　Rails　5　速習実践ガイド 5．2対応 ／大場寧子(著者),松本拓也(著者),櫻井達生(著者),小田井優(著者),大塚隆弘(著者) 【中古】afb"], ["price", 3025], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/bookoffonline/cabinet/512/0019147228l.jpg?_ex=128x128"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/index
+Completed 302 Found in 466ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/books/index" for ::1 at 2021-07-31 23:09:53 +0900
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 55ms (Views: 51.0ms | ActiveRecord: 0.6ms)
+
+

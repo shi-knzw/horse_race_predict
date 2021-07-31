@@ -41,8 +41,12 @@ class BooksController < ApplicationController
   def save_image(hoge)
     require 'open-uri'
     File.open("/Users/kanazawashin/horse_race_predict/app/assets/images/#{hoge[:name]}.jpg", "wb") do |file|
-      open("#{hoge[:image_url]}") do |img|
-        file.puts img.read
+      begin
+        open("#{hoge[:image_url]}") do |img|
+          file.puts img.read
+        end
+      rescue => error
+        puts error
       end
     end
   end
