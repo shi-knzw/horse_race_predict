@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210704001642) do
+ActiveRecord::Schema.define(version: 20210728171422) do
 
   create_table "books", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20210704001642) do
     t.integer "price", null: false
     t.string "image_url"
     t.boolean "availability", default: true, null: false
+    t.binary "image"
   end
 
   create_table "horses", force: :cascade do |t|
