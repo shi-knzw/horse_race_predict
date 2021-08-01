@@ -8,7 +8,7 @@ class BooksController < ApplicationController
   
   def update
     @filteredItems.each do |filteredItem|
-      filteredItem.fetch_values(:name, :price, :image_url)
+      filteredItem.fetch_values(:name, :price, :image_url, :image)
       
       #書籍の値段が変更されたとき、データも上書きされるようにしたい
       #Bookテーブルの中から、書名が一致するデータを取り出す。
@@ -19,19 +19,26 @@ class BooksController < ApplicationController
         #Bookテーブルの中から書名が一致するデータがなければ、bookインスタンスを生成する
         #bookインスタンスの書名と値段を保存する
         book = Book.new
-        book.name = filteredItem[:name]
-        book.price = filteredItem[:price]
         book.image_url = filteredItem[:image_url]
+        book.price = filteredItem[:price]
+        if filteredItem[:name].include?('/')
+          filteredItem[:name].gsub('/', '_')
+          book.name = filteredItem[:name]
+        end
         #画像データをダウンロードする
         save_image(filteredItem)
-        book.image = "true"
+        book.image = true
         book.save
       elsif (filteredItem[:price] != existing_book.price || filteredItem[:image_url] != existing_book.image_url) then
         existing_book.price = filteredItem[:price]
         existing_book.image_url = filteredItem[:image_url]
+        if filteredItem[:name].include?('/')
+          filteredItem[:name].gsub('/', '_')
+          existing_book.name = filteredItem[:name]
+        end
         #画像データをダウンロードする
         save_image(filteredItem)
-        book.image = "true"
+        existing_book.image = true
         existing_book.save
       elsif filteredItem[:price] == existing_book.price then
         #何もしない
@@ -42,6 +49,9 @@ class BooksController < ApplicationController
   
   def save_image(hoge)
     require 'open-uri'
+    if hoge[:name].include?('/')
+      hoge[:name].gsub('/', '_')
+    end
     File.open("/Users/kanazawashin/horse_race_predict/app/assets/images/#{hoge[:name]}.jpg", "wb") do |file|
       begin
         open("#{hoge[:image_url]}") do |img|
@@ -73,7 +83,8 @@ class BooksController < ApplicationController
             "name": element["Item"]["itemName"],
             "price": element["Item"]["itemPrice"],
             "availability": element["Item"]["availability"],
-            "image_url": element["Item"]["mediumImageUrls"][0]["imageUrl"]
+            "image_url": element["Item"]["mediumImageUrls"][0]["imageUrl"],
+            "image": false
           }
         )
       end

@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20210801015110) do
     t.integer "price", null: false
     t.string "image_url"
     t.boolean "availability", default: true, null: false
-    t.boolean "Image", default: false, null: false
+    t.boolean "image", default: false, null: false
   end
 
   create_table "horses", force: :cascade do |t|
