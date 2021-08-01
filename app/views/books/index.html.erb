@@ -5,16 +5,19 @@
       <tr>
         <th>書籍名</th>
         <th>価格</th>
-        <th>画像のURL</th>
+        <th>画像</th>
       </tr>
     </thead>
     <tbody>
       <% @books.each do |book| %>
         <tr>
-          <td><%= book[:name] %></td>
+          <td><%= book[:name]aa %></td>
           <td><%= book[:price] %>円</td>
-          <td><%= book[:image_url] %></td>
-          <td><%=  %></td>
+          <% if book[:image] %>
+            <td><%= image_tag "#{book[:name]}.jpg", class: 'hoge' %></td>
+          <% elsif book[:image] == nil then %>
+            <td><%= image_tag 'rails.jpg', class: 'hoge' %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>

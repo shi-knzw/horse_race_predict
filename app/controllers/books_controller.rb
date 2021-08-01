@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   before_action :fetch_rakuten_books, only: [:update]
 
   def index
-    @books = Book.all[0..4]
+    @books = Book.all
   end
   
   def update
