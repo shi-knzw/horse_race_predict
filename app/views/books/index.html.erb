@@ -11,7 +11,7 @@
     <tbody>
       <% @books.each do |book| %>
         <tr>
-          <td><%= book[:name]aa %></td>
+          <td><%= book[:name] %></td>
           <td><%= book[:price] %>円</td>
           <% if book[:image] %>
             <td><%= image_tag "#{book[:name]}.jpg", class: 'hoge' %></td>

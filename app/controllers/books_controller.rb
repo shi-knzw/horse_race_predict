@@ -24,12 +24,14 @@ class BooksController < ApplicationController
         book.image_url = filteredItem[:image_url]
         #画像データをダウンロードする
         save_image(filteredItem)
+        book.image = "true"
         book.save
       elsif (filteredItem[:price] != existing_book.price || filteredItem[:image_url] != existing_book.image_url) then
         existing_book.price = filteredItem[:price]
         existing_book.image_url = filteredItem[:image_url]
         #画像データをダウンロードする
         save_image(filteredItem)
+        book.image = "true"
         existing_book.save
       elsif filteredItem[:price] == existing_book.price then
         #何もしない
