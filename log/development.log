@@ -57183,3 +57183,312 @@ Started PUT "/__web_console/repl_sessions/f979e126e865ff06857e9e716af96407" for 
 Started PUT "/__web_console/repl_sessions/f979e126e865ff06857e9e716af96407" for ::1 at 2021-08-01 11:40:43 +0900
   [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 11]]
   [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY "books"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/books/index" for ::1 at 2021-08-01 23:00:17 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (54.0ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (bad URI(is not URI?): "file:///Users/kanazawashin/horse_race_predict/app/assets/images/Ruby%E3%80%80on%E3%80%80Rails%E8%B6%85%E5%85%A5%E9%96%80%20%EF%BC%88%E3%81%9F%E3%81%A3%E3%81%9F1%E6%97%A5%E3%81%A7%E5%9F%BA%E6%9C%AC%E3%81%8C%E8%BA%AB%E3%81%AB%E4%BB%98%E3%81%8F%EF%BC%81%EF%BC%89%20[%20%E7%AB%B9%E9%A6%AC%E5%8A%9B%20].jpg?type=image/jpeg"):
+    14:           <td><%= book[:name] %></td>
+    15:           <td><%= book[:price] %>円</td>
+    16:           <% if book[:image] %>
+    17:             <td><%= image_tag "#{book[:name]}.jpg", class: 'hoge' %></td>
+    18:           <% elsif book[:image] then %>
+    19:             <td><%= image_tag 'rails.jpg', class: 'hoge' %></td>
+    20:           <% end %>
+  
+app/views/books/index.html.erb:17:in `block in _app_views_books_index_html_erb__3993801512589801654_13540'
+app/views/books/index.html.erb:12:in `_app_views_books_index_html_erb__3993801512589801654_13540'
+Started PUT "/__web_console/repl_sessions/967627e87a0fe513ceb3f89f1ff059f1" for ::1 at 2021-08-01 23:00:22 +0900
+Started PUT "/__web_console/repl_sessions/967627e87a0fe513ceb3f89f1ff059f1" for ::1 at 2021-08-01 23:00:22 +0900
+Started GET "/books/index" for ::1 at 2021-08-01 23:01:11 +0900
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `allxxx' for #<Class:0x000000011281e3f0>):
+  
+app/controllers/books_controller.rb:6:in `index'
+Started PUT "/__web_console/repl_sessions/a846872bc97df5695dfd471983749d54" for ::1 at 2021-08-01 23:01:18 +0900
+Started PUT "/__web_console/repl_sessions/a846872bc97df5695dfd471983749d54" for ::1 at 2021-08-01 23:01:20 +0900
+Started PUT "/__web_console/repl_sessions/a846872bc97df5695dfd471983749d54" for ::1 at 2021-08-01 23:01:32 +0900
+Started PUT "/__web_console/repl_sessions/a846872bc97df5695dfd471983749d54" for ::1 at 2021-08-01 23:01:33 +0900
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+Started GET "/books/index" for ::1 at 2021-08-01 23:04:17 +0900
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (1.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 84ms (Views: 77.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/books/create" for ::1 at 2021-08-01 23:04:45 +0900
+Processing by BooksController#create as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering books/create.html.erb within layouts/application
+  Rendered books/create.html.erb within layouts/application (1.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/books/update" for ::1 at 2021-08-01 23:04:46 +0900
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"quE1vqyba8S3k5xgsHWEVh0gqctj22h60ltys6Hg8Djhgl8lSn1o6kvr+hMbUE3O3+DDcaxcSdT/dgtfthzEwA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "実践Ruby on Rails 4 機能拡張編【電子書籍】[ 黒田 努 ]"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "Ruby　on　Rails　5アプリケーションプログラミング [ 山田祥寛 ]"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "10日でおぼえるRuby　on　Rails入門教室／arton【3000円以上送料無料】"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "【新品】現場で使えるRuby　on　Rails　5速習実践ガイド　大場寧子/著　松本拓也/著　櫻井達生/著　小田井優/著　大塚隆弘/著　依光奏江/著　銭神裕宜/著　小芝美由紀/著　万葉/監修"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 912ms (ActiveRecord: 3.9ms)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_sysopen - /Users/kanazawashin/horse_race_predict/app/assets/images/【新品】現場で使えるRuby　on　Rails　5速習実践ガイド　大場寧子/著　松本拓也/著　櫻井達生/著　小田井優/著　大塚隆弘/著　依光奏江/著　銭神裕宜/著　小芝美由紀/著　万葉/監修.jpg):
+  
+app/controllers/books_controller.rb:55:in `initialize'
+app/controllers/books_controller.rb:55:in `open'
+app/controllers/books_controller.rb:55:in `save_image'
+app/controllers/books_controller.rb:29:in `block in update'
+app/controllers/books_controller.rb:10:in `each'
+app/controllers/books_controller.rb:10:in `update'
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+Started GET "/books/create" for ::1 at 2021-08-01 23:09:20 +0900
+Processing by BooksController#create as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering books/create.html.erb within layouts/application
+  Rendered books/create.html.erb within layouts/application (0.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 20.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/books/update" for ::1 at 2021-08-01 23:09:21 +0900
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mQdyzMcsc8A2ZOKUGD/KngKGklmaPOnbeuoOy4T0EqPSZBhXIcpw7sochOezGgMGwEb441W7yHVXx3cnkwgmWw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "実践Ruby on Rails 4 機能拡張編【電子書籍】[ 黒田 努 ]"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "Ruby　on　Rails　5アプリケーションプログラミング [ 山田祥寛 ]"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "はじめてのJRuby on Rails 「Java」＋「Ruby」でWebアプリケーション開発"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "現場で使えるRuby on Rails 5速習実践ガイド"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/books/index
+Completed 302 Found in 943ms (ActiveRecord: 9.3ms)
+
+
+Started GET "/books/index" for ::1 at 2021-08-01 23:09:22 +0900
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (1.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/index" for ::1 at 2021-08-01 23:10:18 +0900
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:       </tr>
+    10:     </thead>
+    11:     <tbody>
+    12:       <% @booksxxx.each do |book| %>
+    13:         <tr>
+    14:           <td><%= book[:name] %></td>
+    15:           <td><%= book[:price] %>円</td>
+  
+app/views/books/index.html.erb:12:in `_app_views_books_index_html_erb__3993801512589801654_28600'
+Started PUT "/__web_console/repl_sessions/7d54632d8f82e52a1b93fc953be1352c" for ::1 at 2021-08-01 23:10:27 +0900
+Started PUT "/__web_console/repl_sessions/7d54632d8f82e52a1b93fc953be1352c" for ::1 at 2021-08-01 23:10:29 +0900
+Started PUT "/__web_console/repl_sessions/7d54632d8f82e52a1b93fc953be1352c" for ::1 at 2021-08-01 23:10:30 +0900
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 11]]
+Started PUT "/__web_console/repl_sessions/7d54632d8f82e52a1b93fc953be1352c" for ::1 at 2021-08-01 23:10:36 +0900
+Started PUT "/__web_console/repl_sessions/7d54632d8f82e52a1b93fc953be1352c" for ::1 at 2021-08-01 23:10:37 +0900
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 11]]
+Started PUT "/__web_console/repl_sessions/7d54632d8f82e52a1b93fc953be1352c" for ::1 at 2021-08-01 23:11:01 +0900
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/books/index" for ::1 at 2021-08-04 01:38:07 +0900
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:       </tr>
+    10:     </thead>
+    11:     <tbody>
+    12:       <% @booksxxx.each do |book| %>
+    13:         <tr>
+    14:           <td><%= book[:name] %></td>
+    15:           <td><%= book[:price] %>円</td>
+  
+app/views/books/index.html.erb:12:in `_app_views_books_index_html_erb__1819479406178369780_13540'
+Started GET "/books/index" for ::1 at 2021-08-04 01:38:38 +0900
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (3.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 116ms (Views: 112.0ms | ActiveRecord: 1.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/books/create" for ::1 at 2021-08-04 01:39:21 +0900
+Processing by BooksController#create as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering books/create.html.erb within layouts/application
+  Rendered books/create.html.erb within layouts/application (1.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 27ms (Views: 24.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/books/update" for ::1 at 2021-08-04 01:39:22 +0900
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IssgxXL+HY0MCuXpqhF6y0LBJMIlpn5Q9S6y+lD6sGlpqEpelBgeo/Byg5oBNLNTgAFOeOohX/7YA8sWRwaEkQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "実践Ruby on Rails 4 機能拡張編【電子書籍】[ 黒田 努 ]"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "Ruby　on　Rails　5アプリケーションプログラミング [ 山田祥寛 ]"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "10日でおぼえるRuby　on　Rails入門教室 [ arton ]"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "現場で使えるRuby on Rails 5速習実践ガイド[本/雑誌] / 大場寧子/著 松本拓也/著 櫻井達生/著 小田井優/著 大塚隆弘/著 依光奏江/著 銭神裕宜/著 小芝美由紀/著 万葉/監修"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "現場で使えるRuby on Rails 5速習実践ガイド[本/雑誌] / 大場寧子/著 松本拓也/著 櫻井達生/著 小田井優/著 大塚隆弘/著 依光奏江/著 銭神裕宜/著 小芝美由紀/著 万葉/監修"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "updated_at", "name", "price", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2021-08-03 16:39:23.357642"], ["updated_at", "2021-08-03 16:39:23.357642"], ["name", "現場で使えるRuby on Rails 5速習実践ガイド[本/雑誌] / 大場寧子/著 松本拓也/著 櫻井達生/著 小田井優/著 大塚隆弘/著 依光奏江/著 銭神裕宜/著 小芝美由紀/著 万葉/監修"], ["price", 3828], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/neowing-r/cabinet/item_img_1252/neobk-2288728.jpg?_ex=128x128"], ["image", "t"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/index
+Completed 302 Found in 721ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/books/index" for ::1 at 2021-08-04 01:39:23 +0900
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (The asset "1.jpg" is not present in the asset pipeline.
+):
+    14:           <td><%= book[:name] %></td>
+    15:           <td><%= book[:price] %>円</td>
+    16:           <% if book[:image] %>
+    17:             <td><%= image_tag "#{book[:id]}.jpg", class: 'hoge' %></td>
+    18:           <% elsif book[:image] then %>
+    19:             <td><%= image_tag 'rails.jpg', class: 'hoge' %></td>
+    20:           <% end %>
+  
+app/views/books/index.html.erb:17:in `block in _app_views_books_index_html_erb__1819479406178369780_14620'
+app/views/books/index.html.erb:12:in `_app_views_books_index_html_erb__1819479406178369780_14620'
+Started PUT "/__web_console/repl_sessions/a71536a124962149ea54d659014d8d79" for ::1 at 2021-08-04 01:39:32 +0900
+Started PUT "/__web_console/repl_sessions/a71536a124962149ea54d659014d8d79" for ::1 at 2021-08-04 01:39:35 +0900
+Started GET "/" for ::1 at 2021-08-05 11:17:18 +0900
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#top as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 97ms (Views: 92.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2021-08-05 11:20:31 +0900
+Processing by HomeController#top as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (0.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 13.6ms | ActiveRecord: 0.5ms)
+
+
