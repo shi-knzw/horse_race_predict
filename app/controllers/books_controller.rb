@@ -52,7 +52,7 @@ class BooksController < ApplicationController
     if hoge[:name].include?('/')
       hoge[:name].gsub('/', '_')
     end
-    File.open("/Users/kanazawashin/horse_race_predict/app/assets/images/#{hoge[:id]}.jpg", "wb") do |file|
+    File.open("/Users/kanazawashin/horse_race_predict/app/assets/images/#{hoge[:image_url]}.jpg", "wb") do |file|
       begin
         open("#{hoge[:image_url]}") do |img|
           file.puts img.read
