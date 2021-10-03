@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   get "/" => "home#top"
 
-  get "about" => "home#about"
+  get "about" => "home#about" 
 
   get "books/index" => "books#index"
   get "books/create" => "books#create"

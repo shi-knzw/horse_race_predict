@@ -24,22 +24,29 @@ class BooksController < ApplicationController
         if filteredItem[:name].include?('/')
           filteredItem[:name].gsub('/', '_')
           book.name = filteredItem[:name]
+        else
+          book.name = filteredItem[:name]
         end
-        #画像データをダウンロードする
-        save_image(filteredItem)
+        
         book.image = true
+        puts "-------------------------------"
+        puts book.image_url
+        puts book.name
         book.save
+        #画像データをダウンロードする
+        save_image(book)
       elsif (filteredItem[:price] != existing_book.price || filteredItem[:image_url] != existing_book.image_url) then
+        puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         existing_book.price = filteredItem[:price]
         existing_book.image_url = filteredItem[:image_url]
         if filteredItem[:name].include?('/')
           filteredItem[:name].gsub('/', '_')
           existing_book.name = filteredItem[:name]
         end
-        #画像データをダウンロードする
-        save_image(filteredItem)
         existing_book.image = true
         existing_book.save
+        #画像データをダウンロードする
+        save_image(existing_book)
       elsif filteredItem[:price] == existing_book.price then
         #何もしない
       end
@@ -50,9 +57,9 @@ class BooksController < ApplicationController
   def save_image(hoge)
     require 'open-uri'
     if hoge[:name].include?('/')
-      hoge[:name].gsub('/', '_')
+      hoge[:name].gsub('/', '_')
     end
-    File.open("/Users/kanazawashin/horse_race_predict/app/assets/images/#{hoge[:image_url]}.jpg", "wb") do |file|
+    File.open("/Users/kanazawashin/project/horse_race_predict/app/assets/images/#{hoge[:id]}.jpg", "wb") do |file|
       begin
         open("#{hoge[:image_url]}") do |img|
           file.puts img.read
@@ -82,7 +89,7 @@ class BooksController < ApplicationController
             "name": element["Item"]["itemName"],
             "price": element["Item"]["itemPrice"],
             "availability": element["Item"]["availability"],
-            "image_url": element["Item"]["mediumImageUrls"][0]["imageUrl"],
+            "image_url": element["Item"]["mediumImageUrls"][0]["imageUrl"].gsub('?_ex=128x128',''),
             "image": false
           }
         )
