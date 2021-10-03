@@ -14,7 +14,7 @@
           <td><%= book[:name] %></td>
           <td><%= book[:price] %>円</td>
           <% if book[:image] %>
-            <td><%= image_tag "#{book[:id]}.jpg", class: 'hoge' %></td>
+            <td><%= image_tag "#{book[:id]}.jpg", size: '300x300', class: 'hoge' %></td>
           <% elsif book[:image] then %>
             <td><%= image_tag 'rails.jpg', class: 'hoge' %></td>
           <% end %>
