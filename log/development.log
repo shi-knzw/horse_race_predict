@@ -1509,3 +1509,102 @@ Processing by BooksController#index as HTML
 Completed 200 OK in 37ms (Views: 36.0ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/books/create" for ::1 at 2021-10-10 04:32:23 +0900
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#create as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering books/create.html.erb within layouts/application
+  Rendered books/create.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 80ms (Views: 75.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/books/update" for ::1 at 2021-10-10 04:32:25 +0900
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6kmHBa6ZoHGBQfcJEgiYnElGX3uVeMI4+znLIfJsIa4UEevK3ubcCsbRb5o/hKEnNlx1Zkx3pyuJX7U/Pdjnrw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "実践Ruby on Rails 4 機能拡張編【電子書籍】[ 黒田 努 ]"], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "Ruby　on　Rails　5アプリケーションプログラミング [ 山田祥寛 ]"], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "独習Ruby　on　Rails／小餅良介【3000円以上送料無料】"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "独習Ruby　on　Rails／小餅良介【3000円以上送料無料】"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "updated_at", "name", "price", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2021-10-09 19:32:25.596310"], ["updated_at", "2021-10-09 19:32:25.596310"], ["name", "独習Ruby　on　Rails／小餅良介【3000円以上送料無料】"], ["price", 3960], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/booxstore/cabinet/00974/bk4798160687.jpg"], ["image", "t"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "現場で使えるRuby on Rails 5速習実践ガイド"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."name" = ? LIMIT ?[0m  [["name", "現場で使えるRuby on Rails 5速習実践ガイド"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "updated_at", "name", "price", "image_url", "image") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2021-10-09 19:32:25.822965"], ["updated_at", "2021-10-09 19:32:25.822965"], ["name", "現場で使えるRuby on Rails 5速習実践ガイド"], ["price", 3828], ["image_url", "https://thumbnail.image.rakuten.co.jp/@0_mall/guruguru2/cabinet/b/2/227/9784839962227.jpg"], ["image", "t"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/index
+Completed 302 Found in 591ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/books/index" for ::1 at 2021-10-10 04:32:25 +0900
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (71.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 99ms (Views: 94.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books/index" for ::1 at 2021-10-10 04:52:57 +0900
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (70.6ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 100ms (Views: 95.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books/index" for ::1 at 2021-10-10 04:54:12 +0900
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (28.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 54ms (Views: 43.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/books/index?page=2" for ::1 at 2021-10-10 04:54:16 +0900
+Processing by BooksController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (18.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 38ms (Views: 34.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/books/index" for ::1 at 2021-10-10 04:54:19 +0900
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (15.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 36ms (Views: 32.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/books/index?page=2" for ::1 at 2021-10-10 05:27:32 +0900
+Processing by BooksController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 5]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (18.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 39ms (Views: 35.7ms | ActiveRecord: 0.9ms)
+
+
