@@ -29,14 +29,10 @@ class BooksController < ApplicationController
         end
         
         book.image = true
-        puts "-------------------------------"
-        puts book.image_url
-        puts book.name
         book.save
         #画像データをダウンロードする
         save_image(book)
       elsif (filteredItem[:price] != existing_book.price || filteredItem[:image_url] != existing_book.image_url) then
-        puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         existing_book.price = filteredItem[:price]
         existing_book.image_url = filteredItem[:image_url]
         if filteredItem[:name].include?('/')
