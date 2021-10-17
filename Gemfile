@@ -41,7 +41,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'ruby-debug-ide'
   gem 'debase'
-  gem 'sqlite3'
+  gem 'pg'
 end
 
 group :development do
