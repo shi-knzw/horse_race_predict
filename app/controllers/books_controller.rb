@@ -5,7 +5,24 @@ class BooksController < ApplicationController
   def index
     @books = Book.all.page(params[:page]).per(5)
   end
-  
+
+  def search
+    if (params[:keyword].nil?) then
+      book = {}
+      book["id"] = 8
+      book["name"] = "Ruby　on　Rails超入門 （たった1日で基本が身に付く！） [ 竹馬力 ]"
+      book["price"] = 1000
+      book["image_url"] = "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/6183/9784774196183.jpg"
+      book["availability"] = true
+      book["image"] = true
+      book["created_at"] = "2021-10-17 01:43:44"
+      book["updated_at"] = "2021-10-17 01:43:44"
+      @books = [book]
+    end
+    @books = RakutenWebService::Books::Book.search(keyword: params[:keyword])
+  end
+
+
   def update
     @filteredItems.each do |filteredItem|
       filteredItem.fetch_values(:name, :price, :image_url, :image)
@@ -91,6 +108,5 @@ class BooksController < ApplicationController
         )
       end
     end
-  end  
-
+  end
 end

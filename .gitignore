@@ -1,2 +1,4 @@
 /tmp/**.sqlite3
+/tmp/pids/*
 *.cache
+/config/settings.local.yml

@@ -1,0 +1,38 @@
+<div class="books_info">
+  <h3>書籍結果</h3>
+  <div style="padding: 30px;">
+    <table border="1">
+      <thead>
+        <tr>
+          <th>書籍名</th>
+          <th>価格</th>
+          <th>画像</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @books.each do |book| %>
+          <%#  book.titleで判定しているのは、title属性が楽天ブックAPIでは存在し、今まで触って きた楽天市場apiでは存在しない属性だったから   %>
+          <% if book.title.nil? %>
+            <tr>
+              <td><%= book[:name] %></td>
+              <td><%= book[:price] %>円</td>
+              <% if book[:image] %>
+                <td><%= image_tag "#{book[:id]}.jpg", size: '300x300', class: 'hoge' %></td>
+              <% else %>
+                <td><%= image_tag 'rails.jpg', class: 'hoge' %></td>
+              <% end %>
+            </tr>
+          <%# 楽天ブックapiで取得した本一覧。画像データはassets/imagesフォルダ配下にファイルとして保存していないのでimage_tagで表示できなかった %>
+          <% else %>
+            <tr>
+              <td><%= book.title %></td>
+              <td><%= book.item_price %>円</td>
+              <td><%= image_tag 'rails.jpg', class: 'hoge' %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <%# <%= paginate @books %> %>
+</div>
