@@ -1,4 +1,4 @@
- <h1>Rakuserach</h1>
+ <h1>Books/serach</h1>
 <div class='content'>
   <div id="search-box">
     <%= form_tag('/books/search', {method: :get}) do %>
@@ -6,8 +6,6 @@
     <% end %>
   </div>
   <% if @books %>
-    <div id='book_list'>
-      <%= render "book_list" %>
-    </div>
+    <%= render "books/book_list" %>
   <% end %>
 </div>
