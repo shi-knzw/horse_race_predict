@@ -1,8 +1,8 @@
- <h1>Books/serach</h1>
 <div class='content'>
   <div id="search-box">
+    <p><span>書籍検索</span></p>
     <%= form_tag('/books/search', {method: :get}) do %>
-        <%= text_field_tag :book, "",  id: "book_search", name: "keyword", placeholder: "キーワードを打ち込んでください", style: "width: 200px;"%><button title="検索" type="submit">検索</button>
+        <%= text_field_tag :book, "",  id: "book_search", name: "keyword", placeholder: "キーワードを打ち込んでください", style: "width: 300px;", height: "40px;" %><button title="検索" type="submit">検索</button>
     <% end %>
   </div>
   <% if @books %>
