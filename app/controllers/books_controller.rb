@@ -5,16 +5,7 @@ class BooksController < ApplicationController
   def index
     @books = Book.all.page(params[:page]).per(5)
   end
-
-  def search
-    if params[:keyword].nil?
-      @books = nil
-    else
-      @books = RakutenWebService::Books::Book.search(title: params[:keyword])
-    end
-  end
-
-
+  
   def update
     @filteredItems.each do |filteredItem|
       filteredItem.fetch_values(:name, :price, :image_url, :image)
@@ -100,5 +91,6 @@ class BooksController < ApplicationController
         )
       end
     end
-  end
+  end  
+
 end
