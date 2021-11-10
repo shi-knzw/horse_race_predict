@@ -1,9 +1,15 @@
 RakutenWebService.configure do |c|
     # (必須) アプリケーションID
-    c.application_id = Settings.rakuten[:application_id]
+    if Rails.env.production?
+      c.application_id = process.env.application_id
+    else
+      c.application_id = Settings.rakuten[:application_id]
 
     # (任意) 楽天アフィリエイトID
-    c.affiliate_id = Settings.rakuten[:affiliate_id] # default: nil
+    if Rails.env.production?
+      c.application_id = process.env.affiliate_id
+    else
+      c.affiliate_id = Settings.rakuten[:affiliate_id] # default: nil
 
     # (任意) リクエストのリトライ回数
     # 一定期間の間のリクエスト数が制限を超えた時、APIはリクエスト過多のエラーを返す。
