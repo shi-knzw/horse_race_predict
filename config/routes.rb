@@ -30,6 +30,8 @@ Rails.application.routes.draw do
   get "books/create" => "books#create"
   get "books/show" => "books#show"
   post "books/update" => "books#update"
+  get "books/get_api" => "books#get_api"
+  get "books/search" => "books#search"
   
   resources :home
   root 'home#top'
