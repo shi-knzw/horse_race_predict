@@ -14,9 +14,9 @@
           <tr>
             <td><%= book[:name] %></td>
             <td><%= book[:price] %>円</td>
-            <% if book[:image] %>
+            <% if File.exist?("app/assets/images/#{book[:id]}.jpg") %>
               <td><%= image_tag "#{book[:id]}.jpg", size: '300x300', class: 'hoge' %></td>
-            <% elsif book[:image] then %>
+            <% else %>
               <td><%= image_tag 'rails.jpg', class: 'hoge' %></td>
             <% end %>
           </tr>
