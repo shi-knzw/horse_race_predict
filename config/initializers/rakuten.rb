@@ -1,14 +1,14 @@
 RakutenWebService.configure do |c|
     # (必須) アプリケーションID
     if Rails.env.production?
-      c.application_id = ENV["RWS_APPLICATION_ID"]
+      c.application_id = (ENV["RWS_APPLICATION_ID"]).to_i
     else
       c.application_id = Settings.rakuten[:application_id]
     end
 
     # (任意) 楽天アフィリエイトID
     if Rails.env.production?
-      c.application_id = ENV["RWS_AFFILIATION_ID"]
+      c.affiliate_id = ENV["RWS_AFFILIATION_ID"]
     else
       c.affiliate_id = Settings.rakuten[:affiliate_id] # default: nil
     end
